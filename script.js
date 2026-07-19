@@ -68,6 +68,13 @@ document.querySelectorAll('.case-video source').forEach(src => {
   });
 });
 
+document.querySelectorAll('.case-photo img').forEach(img => {
+  img.addEventListener('error', () => {
+    const wrapper = img.closest('.case-photo');
+    if (wrapper) wrapper.style.display = 'none';
+  });
+});
+
 // ---------------------------------------------------------------------
 // Scroll reveal (sections + case cards)
 // ---------------------------------------------------------------------
