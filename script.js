@@ -59,6 +59,16 @@ function animateHero(){
 }
 
 // ---------------------------------------------------------------------
+// Case video slots: hide gracefully until the real file is uploaded
+// ---------------------------------------------------------------------
+document.querySelectorAll('.case-video source').forEach(src => {
+  src.addEventListener('error', () => {
+    const wrapper = src.closest('.case-video');
+    if (wrapper) wrapper.style.display = 'none';
+  });
+});
+
+// ---------------------------------------------------------------------
 // Scroll reveal (sections + case cards)
 // ---------------------------------------------------------------------
 const revealTargets = document.querySelectorAll('.reveal, .case-card');
