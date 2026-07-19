@@ -609,11 +609,32 @@ button{ font-family: inherit; cursor: pointer; }
   position: relative;
   min-height: 70vh;
   background: linear-gradient(160deg,#F6A7FB,#7A5CF0);
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 120px var(--pad) 60px;
-  color: var(--black);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.case-hero::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(13,13,15,0.15) 0%,
+    rgba(13,13,15,0.1) 40%,
+    rgba(13,13,15,0.75) 100%);
+  z-index: 0;
+}
+
+.case-hero__tag,
+.case-hero h1,
+.case-hero__stats{
+  position: relative;
+  z-index: 1;
 }
 
 .back-link{
@@ -673,7 +694,7 @@ button{ font-family: inherit; cursor: pointer; }
 
 .case-hero__stats span{
   font-size: 12px;
-  opacity: 0.65;
+  opacity: 0.8;
 }
 
 .case-body{
